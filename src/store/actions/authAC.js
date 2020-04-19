@@ -1,4 +1,5 @@
 import * as actionTypes from './actionTypes';
+import axios from 'axios';
 
 const authStart = () => {
     return {
@@ -35,23 +36,32 @@ const checkAuthTimeout = (expirationTime)=> {
     };
 }
 
-export const auth = (email, password, isSignUp) => {
+export const auth = (username, password, isSignUp) => {
     return dispatch => {
         dispatch(authStart());
         const authData = {
-            email: email,
-            password: password,
-            returnSecureToken: true
-
+            UserName: username,
+            Password: password
         };
-        let url= 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=';
+        let url= 'https://localhost:44340/Api/UserAccount/RegisterUser';
 
         if(!isSignUp){
-            url= 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=';
+            url= 'https://localhost:44340/Api/UserAccount/ValidateUser';
         }
 
         console.log(authData);
-        
+        axios.post(url, authData)
+            .then(response => {
+                console.log(response);
+                dispatch(authSuccess((2014+Math.random() * (3.25)), username));
+                dispatch(checkAuthTimeout(60000));
+            }
+            )
+            .catch(err => {
+                console.log(err);
+                alert(err.response.data.Message);
+                dispatch(authFail(err.response.data.message));
+            })
     }
 }
 

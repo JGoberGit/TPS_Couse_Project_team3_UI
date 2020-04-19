@@ -6,7 +6,7 @@
 }
 
 .NavItem a{
-    color: #8F5C2C;
+    color: rgb(45, 112, 151);
     text-decoration: none;
     width: 100%;
     box-sizing: border-box;
@@ -40,7 +40,7 @@
     .NavItem a:hover,
     .NavItem a:active,
     .NavItem a.active{
-        background-color: #8F5C2C;
+        background-color:rgb(5, 78, 146);
         border-bottom: 4px solid #40A4C8;
         color: white;
     }

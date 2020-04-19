@@ -41,11 +41,11 @@ class Auth extends Component {
                 touched: false
             }
         },
-        isSignUp: true
+        isSignUp: false
     }
 
     componentDidMount () {
-        if(this.props.authRedirectPath !== '/'){
+        if(this.props.authRedirectPath !== '/dashboard'){
             this.props.onSetAuthRedirectPath();
         }
     }
@@ -132,13 +132,14 @@ class Auth extends Component {
         }
         return (
             <div className={classes.Auth}>
+                <h2>Welcome, please login or sign up for a new account!</h2>
                 {authRedirect}
                 <form onSubmit={this.sumbitHandler}>
                     {form}
                     {errorMessage}
                     <Button btnType='Success'>SUBMIT</Button>
                 </form>
-                <Button btnType='Danger' clicked={this.switchAuthModeHandler}>Switch to {this.state.isSignUp? 'Sign-in':'Sign-Up'}</Button>
+                <Button btnType='Danger' clicked={this.switchAuthModeHandler}>Switch to <em>{this.state.isSignUp? 'Sign-in':'Sign-Up'}</em></Button>
             </div>
         );
     }
@@ -154,7 +155,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         onAuth: (username, password, isSignUp) => dispatch(actions.auth(username, password, isSignUp)),
-        onSetAuthRedirectPath: () => dispatch(actions.setAuthRedirectPath('/'))
+        onSetAuthRedirectPath: () => dispatch(actions.setAuthRedirectPath('/dashboard'))
     };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Auth);

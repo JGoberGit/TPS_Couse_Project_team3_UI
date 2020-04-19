@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { Route, Switch} from 'react-router-dom';
+import { Route, Switch, Redirect} from 'react-router-dom';
 import './App.css';
 
 import Layout from './containers/Layout/Layout';
 import Auth from './containers/Authentication/Authentication';
 import Logout from './containers/Authentication/Logout/Logout';
-import Dashboard from './containers/Dashboard/Dashboard';
+import StaffDashboard from './containers/Dashboard/StaffDashboard';
 
 class App extends Component {
 
@@ -14,7 +14,9 @@ class App extends Component {
       <div>
         <Layout>
           <Switch>
-            <Route path="/" exact component={Dashboard} />
+            <Redirect exact from="/" to="/auth" />
+            <Redirect exact from="/dashboard" to="/dashboard/staff" />
+            <Route path="/dashboard/staff" exact component={StaffDashboard} />
             <Route path="/auth" exact component={Auth} />
             <Route path="/logout" exact component={Logout} />
           </Switch>
@@ -26,3 +28,4 @@ class App extends Component {
 }
 
 export default App;
+

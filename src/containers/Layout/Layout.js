@@ -4,11 +4,13 @@ import Toolbar from '../../components/Navigation/Toolbar/Toolbar';
 import SideDrawer from "../../components/Navigation/SideDrawer/SideDrawer";
 import { connect } from 'react-redux';
 
+
 class Layout extends Component {
 
     state = {
         showSideDrawer: false
     }
+
 
     sideDrawerToggleHandler = () => {
         this.setState((prevState) => { return { showSideDrawer: !prevState.showSideDrawer }; });
@@ -17,6 +19,7 @@ class Layout extends Component {
 
 
     render() {
+
         return (
             <>
                 <Toolbar

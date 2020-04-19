@@ -11,6 +11,7 @@ const toolbar = (props) => (
         <div className={classes.Logo}>
             <Logo />
         </div>
+        <h1 style={{textAlign:"right", color:"white"}}>TPS Website</h1>
         <nav className={classes.DesktopOnly}>
             <NavItems isAuthenticated={props.isAuth} />
         </nav>

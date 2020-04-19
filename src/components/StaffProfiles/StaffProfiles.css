@@ -1,0 +1,37 @@
+.StaffProfiles{
+    margin: 0 auto;
+     padding: 0;
+     width: 70%;
+
+}
+
+.StaffProfiles ul {
+    list-style-type: none;
+    width: 100%;
+}
+.StaffProfiles h3 {
+    font: bold 20px/1.5 Helvetica, Verdana, sans-serif;
+}
+   
+.StaffProfiles li img {
+    float: left;
+    margin: 0 15px 0 0;
+    max-width: 100px;
+    max-height: 100px;
+}
+
+.StaffProfiles li p {
+    font: 200 12px/1.5 Georgia, Times New Roman, serif;
+}
+
+.StaffProfiles li {
+    padding: 10px;
+    overflow: auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 1em 0;
+}
+
+.StaffProfiles li:hover {
+    background: rgb(107, 136, 141);
+    cursor: pointer;
+}
