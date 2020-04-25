@@ -59,8 +59,13 @@ export const auth = (username, password, isSignUp) => {
             )
             .catch(err => {
                 console.log(err);
-                alert(err.response.data.Message);
-                dispatch(authFail(err.response.data.message));
+                if(err.response != null){
+                    err.message = err.response.data.Message;
+                }   
+                else{
+                    err.message="Error connecting with the authentication server, please try again later";
+                }
+                dispatch(authFail(err));
             })
     }
 }

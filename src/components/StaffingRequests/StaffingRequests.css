@@ -1,0 +1,37 @@
+.StaffingRequests{
+    margin: 0 auto;
+     padding: 0;
+     width: 70%;
+
+}
+
+.StaffingRequests ul {
+    list-style-type: none;
+    width: 100%;
+}
+.StaffingRequests h3 {
+    font: bold 20px/1.5 Helvetica, Verdana, sans-serif;
+}
+   
+.StaffingRequests li img {
+    float: left;
+    margin: 0 15px 0 0;
+    max-width: 100px;
+    max-height: 100px;
+}
+
+.StaffingRequests li p {
+    font: 200 12px/1.5 Georgia, Times New Roman, serif;
+}
+
+.StaffingRequests li {
+    padding: 10px;
+    overflow: auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 1em 0;
+}
+
+.StaffingRequests li:hover {
+    background: rgb(107, 136, 141);
+    cursor: pointer;
+}

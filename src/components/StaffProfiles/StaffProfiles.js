@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import classes from './StaffProfiles.css';
 import StaffProfile from './StaffProfile/StaffProfile';
+import Modal from '../../components/UI/Modal/Modal';
 import Axios from 'axios';
+import EditableStaffProfile from './StaffProfile/EditableStaffProfile/EditableStaffProfile';
 
 class StaffProfiles extends Component {
 
@@ -47,7 +49,6 @@ class StaffProfiles extends Component {
 
         return (
             <>
-                
                 <div className={classes.StaffProfiles}>
                 <h2>All Staff Profiles</h2>
                     <ul>
@@ -60,18 +61,3 @@ class StaffProfiles extends Component {
 }
 
 export default StaffProfiles;
-/*
-<>
-            <StaffProfile
-            FirstName ='Jon'
-            LastName = 'Gober'
-            />
-            <StaffProfile
-            FirstName ='Jon'
-            LastName = 'Gober'
-            />
-            <StaffProfile
-            FirstName ='Jon'
-            LastName = 'Gober'
-            />
-            </>*/

@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
-import StaffProfiles from '../../components/StaffProfiles/StaffProfiles';
+import ClientContracts from '../../components/ClientContracts/ClientContracts';
 import { connect } from 'react-redux';
 import { Redirect} from 'react-router-dom';
 
-class StaffDashboard extends Component {
+class ClientContractDashboard extends Component {
 
     render() {
-        /*if (!this.props.isAuthenticated){
+       /* if (!this.props.isAuthenticated){
             return <Redirect
                 to="/auth"
                 />;
         }*/
         return (
             <>
-                <StaffProfiles/>
+                <ClientContracts/>
             </>
         );
     }
@@ -24,4 +24,4 @@ const mapStateToProps = state => {
         isAuthenticated: state.auth.token !== null
     };
 }
-export default connect(mapStateToProps)(StaffDashboard);
+export default connect(mapStateToProps)(ClientContractDashboard);
